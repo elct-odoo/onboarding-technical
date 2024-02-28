@@ -17,7 +17,7 @@
         "views/templates.xml",
     ],
     "demo": [
-        "demo/demo.xml",
+        "demo/motorcycle_registry_demo.xml",
     ],
     "application": True,
 }
