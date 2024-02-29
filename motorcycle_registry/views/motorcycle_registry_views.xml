@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="motorcycle_registry.list">
+      <field name="name">motorcycle_registry.view.form</field>
+      <field name="model">motorcycle.registry</field>
+      <field name="arch" type="xml">
+        <form string="Motorcycle Registry View">
+          <header></header>
+          <sheet>
+            <h1>
+              <field name="registry_number" />
+            </h1>
+            <group>
+              <group>
+                <separator string="Motorcycle Information" />
+                <field name="date_registry" />
+                <field name="vin" />
+                <field name="current_mileage" />
+                <field name="license_plate" />
+              </group>
+              <group>
+                <separator string="Owner Information" />
+                <field name="first_name" />
+                <field name="last_name" />
+              </group>
+            </group>
+            <notebook>
+              <page string="Related Documents">
+                <field name="certificate_title" />
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+  </data>
+</odoo>
