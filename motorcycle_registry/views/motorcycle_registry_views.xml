@@ -51,5 +51,24 @@
       </field>
     </record>
 
+    <!-- Search View -->
+    <record id="motorcycle_registry_view_search" model="ir.ui.view">
+      <field name="name">motorcycle.registry.view.search</field>
+      <field name="model">motorcycle.registry</field>
+      <field name="arch" type="xml">
+        <search>
+          <filter name="filter_date_registry" date="date_registry" string="Registration Date" />
+          <filter name="groupby_date_registry" string="Registration Date"
+            context="{'group_by' :'date_registry'}" />
+          <filter name="filter_last_name_alpha" string="Last Name (A-Z)"
+            domain="[]" context="{'orderby': 'last_name ASC'}" />
+          <field name="registry_number" />
+          <field name="vin" />
+          <field name="last_name" />
+          <field name="license_plate" />
+        </search>
+      </field>
+    </record>
+
   </data>
 </odoo>
