@@ -13,6 +13,8 @@
     "version": "0.1",
     "depends": ["base"],
     "data": [
+        "security/motorcycle_registry_groups.xml",
+        "security/ir.model.access.csv",
         "views/views.xml",
         "views/templates.xml",
     ],
