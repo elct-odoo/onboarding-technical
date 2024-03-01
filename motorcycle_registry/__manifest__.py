@@ -20,7 +20,7 @@
         "data/registry_data.xml",
     ],
     "demo": [
-        "demo/motorcycle_registry_demo.xml",
+        # "demo/motorcycle_registry_demo.xml",
     ],
     "application": True,
 }
