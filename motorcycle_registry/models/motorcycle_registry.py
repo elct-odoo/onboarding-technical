@@ -36,18 +36,27 @@ class motorcycle_registry(models.Model):
 
     @api.depends("vin")
     def _compute_make(self):
-        for record in self:
-            record.make = record.vin[0:2]
+        for registry in self:
+            if registry.vin:
+                registry.make = registry.vin[:2]
+            else:
+                registry.make = False
 
     @api.depends("vin")
     def _compute_model(self):
-        for record in self:
-            record.model = record.vin[2:4]
+        for registry in self:
+            if registry.vin:
+                registry.model = registry.vin[2:4]
+            else:
+                registry.model = False
 
     @api.depends("vin")
     def _compute_year(self):
-        for record in self:
-            record.year = record.vin[4:6]
+        for registry in self:
+            if registry.vin:
+                registry.year = registry.vin[4:6]
+            else:
+                registry.year = False
 
     @api.constrains("license_plate")
     def _check_license_plate_size(self):
