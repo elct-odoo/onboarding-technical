@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
+import re
+
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 
 class motorcycle_registry(models.Model):
@@ -19,6 +22,33 @@ class motorcycle_registry(models.Model):
         copy=False,
         required=True,
         readonly=True,
-        default="New",
+        default="MRN0000",
     )
     vin = fields.Char(string="VIN", required=True)
+
+    @api.constrains("license_plate")
+    def _check_license_plate_size(self):
+        pattern = "^[A-Z]{1,3}\d{1,4}[A-Z]{0,2}$"
+        for registry in self.filtered(lambda r: r.license_plate):
+            match = re.match(pattern, registry.license_plate)
+            if not match:
+                raise ValidationError("Invalid License Plate")
+
+    @api.constrains("vin")
+    def _check_vin_pattern(self):
+        pattern = "^[A-Z]{4}\d{2}[A-Z0-9]{2}\d{5}$"
+        for registry in self.filtered(lambda r: r.vin):
+            match = re.match(pattern, registry.vin)
+            if not match:
+                raise ValidationError("Invalid VIN")
+            if not registry.vin[0:2] == "KA":
+                raise ValidationError("Only motorcycles from Kawill Motors are allowed")
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if "registry_number" not in vals:
+                vals["registry_number"] = self.env["ir.sequence"].next_by_code(
+                    "registry.number"
+                )
+        return super().create(vals_list)
