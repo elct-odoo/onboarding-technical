@@ -2,23 +2,17 @@
 <odoo>
   <data noupdate="1">
     <record id="registry_01" model="motorcycle.registry">
-      <field name="first_name">Corey</field>
-      <field name="last_name">Bright</field>
       <field name="registry_number">MRN0001</field>
       <field name="current_mileage">250</field>
       <field name="vin">KAIN220M000136</field>
     </record>
     <record id="registry_02" model="motorcycle.registry">
-      <field name="first_name">Kyle</field>
-      <field name="last_name">O'Grady</field>
       <field name="registry_number">MRN0002</field>
       <field name="current_mileage">5250</field>
       <field name="vin">KARA230L562367</field>
       <field name="date_registry">2023-01-27</field>
     </record>
     <record id="registry_03" model="motorcycle.registry">
-      <field name="first_name">Faizan</field>
-      <field name="last_name">Rafieuddin</field>
       <field name="registry_number">MRN0003</field>
       <field name="current_mileage">23250</field>
       <field name="vin">KAUK21XL844859</field>

@@ -14,8 +14,6 @@ class motorcycle_registry(models.Model):
     certificate_title = fields.Binary(string="Certificate Title")
     current_mileage = fields.Float(string="Current Mileage")
     date_registry = fields.Date(string="Date of Registry")
-    first_name = fields.Char(string="First Name", required=True)
-    last_name = fields.Char(string="Last Name", required=True)
     license_plate = fields.Char(string="License Plate")
     registry_number = fields.Char(
         string="Registry Number",
@@ -25,6 +23,31 @@ class motorcycle_registry(models.Model):
         default="MRN0000",
     )
     vin = fields.Char(string="VIN", required=True)
+
+    owner_id = fields.Many2one(
+        comodel_name="res.partner", ondelete="restrict", string="Owner"
+    )
+    owner_phone = fields.Char(related="owner_id.phone", readonly=True)
+    owner_email = fields.Char(related="owner_id.email", readonly=True)
+
+    make = fields.Char(compute="_compute_make", readonly=True)
+    model = fields.Char(compute="_compute_model", readonly=True)
+    year = fields.Char(compute="_compute_year", readonly=True)
+
+    @api.depends("vin")
+    def _compute_make(self):
+        for record in self:
+            record.make = record.vin[0:2]
+
+    @api.depends("vin")
+    def _compute_model(self):
+        for record in self:
+            record.model = record.vin[2:4]
+
+    @api.depends("vin")
+    def _compute_year(self):
+        for record in self:
+            record.year = record.vin[4:6]
 
     @api.constrains("license_plate")
     def _check_license_plate_size(self):
