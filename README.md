@@ -17,3 +17,7 @@ The primary objectives of this technical training repository are:
 - To provide developers with a comprehensive understanding of Odoo's architecture and development principles.
 - To equip developers with the skills and knowledge necessary to customize Odoo specifically for Kawill Motors' requirements.
 - To offer hands-on exercises and practical examples to reinforce learning and facilitate skill development.
+
+## Database Dump
+
+[Here](https://drive.google.com/file/d/1omGa6BmIWpP0iKvjI_U8RX5B6jH-np_n/view?usp=drive_link) is the link to the database dump for this project.
