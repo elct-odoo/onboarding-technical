@@ -2,7 +2,7 @@
 
 import re
 
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
 
@@ -64,7 +64,7 @@ class motorcycle_registry(models.Model):
         for registry in self.filtered(lambda r: r.license_plate):
             match = re.match(pattern, registry.license_plate)
             if not match:
-                raise ValidationError("Invalid License Plate")
+                raise ValidationError(_("Invalid License Plate"))
 
     @api.constrains("vin")
     def _check_vin_pattern(self):
@@ -72,9 +72,11 @@ class motorcycle_registry(models.Model):
         for registry in self.filtered(lambda r: r.vin):
             match = re.match(pattern, registry.vin)
             if not match:
-                raise ValidationError("Invalid VIN")
+                raise ValidationError(_("Invalid VIN"))
             if not registry.vin[0:2] == "KA":
-                raise ValidationError("Only motorcycles from Kawill Motors are allowed")
+                raise ValidationError(
+                    _("Only motorcycles from Kawill Motors are allowed")
+                )
 
     @api.model_create_multi
     def create(self, vals_list):
