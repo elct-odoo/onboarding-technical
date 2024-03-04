@@ -1,0 +1,76 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* motorcycle_website
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-04 21:44+0000\n"
+"PO-Revision-Date: 2024-03-04 21:44+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: motorcycle_website
+#: model_terms:ir.ui.view,arch_db:motorcycle_website.motorcycle_compare
+msgid "Battery Capacity:"
+msgstr ""
+
+#. module: motorcycle_website
+#: model_terms:ir.ui.view,arch_db:motorcycle_website.motorcycle_compare
+msgid "Charge Time:"
+msgstr ""
+
+#. module: motorcycle_website
+#: model_terms:ir.ui.view,arch_db:motorcycle_website.motorcycle_compare
+msgid "Comparison"
+msgstr ""
+
+#. module: motorcycle_website
+#: model_terms:ir.ui.view,arch_db:motorcycle_website.motorcycle_compare
+msgid "Curb Weight:"
+msgstr ""
+
+#. module: motorcycle_website
+#: model_terms:ir.ui.view,arch_db:motorcycle_website.motorcycle_compare
+msgid "Horsepower:"
+msgstr ""
+
+#. module: motorcycle_website
+#: model_terms:ir.ui.view,arch_db:motorcycle_website.motorcycle_compare
+msgid "Launch Date:"
+msgstr ""
+
+#. module: motorcycle_website
+#: model_terms:ir.ui.view,arch_db:motorcycle_website.motorcycle_compare
+msgid "Motorcycle Comparison"
+msgstr ""
+
+#. module: motorcycle_website
+#: model_terms:ir.ui.view,arch_db:motorcycle_website.motorcycle_compare
+msgid "Range:"
+msgstr ""
+
+#. module: motorcycle_website
+#: model_terms:ir.ui.view,arch_db:motorcycle_website.motorcycle_compare
+msgid "Specs"
+msgstr ""
+
+#. module: motorcycle_website
+#: model_terms:ir.ui.view,arch_db:motorcycle_website.motorcycle_compare
+msgid "Top Speed:"
+msgstr ""
+
+#. module: motorcycle_website
+#: model_terms:ir.ui.view,arch_db:motorcycle_website.motorcycle_compare
+msgid "Torque:"
+msgstr ""
+
+#. module: motorcycle_website
+#: model_terms:ir.ui.view,arch_db:motorcycle_website.motorcycle_compare
+msgid "motorcycle image"
+msgstr ""
